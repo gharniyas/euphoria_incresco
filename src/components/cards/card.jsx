@@ -8,7 +8,7 @@ const Card = ({ data }) => {
 
   return (
     <div
-      className="w-[281px] h-[400px] relative"
+      className="w-[281px] h-[400px] relative "
       onClick={() => push(`product/${data?._id}`)}
     >
       {data?.image_url && (
@@ -17,7 +17,7 @@ const Card = ({ data }) => {
           alt=""
           width={282}
           height={370}
-          className="border rounded-[12px] relative"
+          className="border rounded-[12px]  h-[320px] relative"
         />
       )}
       <Button
