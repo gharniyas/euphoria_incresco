@@ -8,7 +8,7 @@ const Card = ({ data }) => {
 
   return (
     <div
-      className="w-[281px] h-[441px] relative" // Add relative positioning here
+      className="w-[281px] h-[400px] relative"
       onClick={() => push(`product/${data?._id}`)}
     >
       {data?.image_url && (
