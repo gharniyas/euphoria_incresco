@@ -41,18 +41,27 @@ const Banner = ({ data }) => {
             <CarouselContent>
               <CarouselItem>
                 <Image
-                  src={{}}
+                  src={
+                    "https://assets.ajio.com/medias/sys_master/root/20230609/LsJG/6483127cd55b7d0c635cdc79/-473Wx593H-466230217-offwhite-MODEL.jpg"
+                  }
                   alt=""
                   width={68}
                   height={68}
-                  className="bg-[#F6F6F6]"
+                  className="bg-[#F6F6F6] "
                 />
               </CarouselItem>
               <CarouselItem>
                 <Image alt="" src={data?.image_url} width={68} height={68} />
               </CarouselItem>
               <CarouselItem>
-                <Image alt="" src={{}} width={68} height={68} />
+                <Image
+                  alt=""
+                  src={
+                    "https://assets.ajio.com/medias/sys_master/root/20230802/xGDB/64c9af86a9b42d15c9849e27/-1117Wx1400H-466410521-green-MODEL.jpg"
+                  }
+                  width={68}
+                  height={68}
+                />
               </CarouselItem>
             </CarouselContent>
 
