@@ -22,7 +22,7 @@ const Card = ({ data }) => {
       )}
       <Button
         variant="secondary"
-        className="bg-[#F6F6F6] p-2 rounded-full absolute top-4 right-4" // Use absolute positioning with top/right
+        className="bg-[#F6F6F6] p-2 rounded-full absolute top-4 right-4"
         onClick={(e) => {
           e.stopPropagation();
         }}
