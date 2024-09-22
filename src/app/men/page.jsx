@@ -10,8 +10,15 @@ import React from "react";
 const Men = () => {
   const pathname = usePathname();
   const gender = pathname.split("/")[1];
-  const { searchValue, categories, colors, sizes, dressStyles, setProducts } =
-    useStore();
+  const {
+    searchValue,
+    priceRange,
+    categories,
+    colors,
+    sizes,
+    dressStyles,
+    setProducts,
+  } = useStore();
 
   const limit = 9;
 
@@ -25,6 +32,7 @@ const Men = () => {
           colors,
           sizes,
           dressStyles,
+          priceRange,
           gender,
         },
       ],
@@ -36,6 +44,7 @@ const Men = () => {
           sizes,
           dressStyles,
           limit,
+          priceRange,
           offset: pageParam,
           gender,
         }),

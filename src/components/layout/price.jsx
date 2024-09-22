@@ -13,7 +13,6 @@ const Price = () => {
   const { priceRange, setPriceRange } = useStore();
   const handlePrice = (value) => {
     const updatedPriceRange = [0, value[0]];
-    console.log(updatedPriceRange, "Price Range");
     setPriceRange(updatedPriceRange);
   };
 

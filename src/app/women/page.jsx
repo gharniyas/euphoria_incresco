@@ -10,7 +10,8 @@ import React from "react";
 const Women = () => {
   const pathname = usePathname();
   const gender = pathname.split("/")[1];
-  const { searchValue, categories, colors, sizes, dressStyles } = useStore();
+  const { searchValue, priceRange, categories, colors, sizes, dressStyles } =
+    useStore();
 
   const limit = 9;
 
@@ -24,6 +25,7 @@ const Women = () => {
           colors,
           sizes,
           dressStyles,
+          priceRange,
           gender,
         },
       ],
@@ -34,6 +36,7 @@ const Women = () => {
           colors,
           sizes,
           dressStyles,
+          priceRange,
           limit,
           offset: pageParam,
           gender,

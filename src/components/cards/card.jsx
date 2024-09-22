@@ -17,7 +17,7 @@ const Card = ({ data }) => {
           alt=""
           width={282}
           height={370}
-          className="border rounded-[12px]  h-[320px] relative"
+          className="border rounded-[12px] w-[270px] h-[320px] relative"
         />
       )}
       <Button

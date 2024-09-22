@@ -21,7 +21,6 @@ export default function Index() {
     refetchOnWindowFocus: false,
   });
 
-  console.log(data, ":data");
   const { data: SM_products } = useQuery({
     queryKey: ["GET_SIMILAR_PRODUCTS"],
     queryFn: () => fetchProducts({ limit, offset }),

@@ -10,7 +10,8 @@ import React from "react";
 const Joggers = () => {
   const pathname = usePathname();
   const categories = [pathname.split("/")[1]];
-  const { searchValue, colors, sizes, dressStyles, setProducts } = useStore();
+  const { searchValue, priceRange, colors, sizes, dressStyles, setProducts } =
+    useStore();
 
   const limit = 9;
 
@@ -22,6 +23,7 @@ const Joggers = () => {
           searchValue,
           categories,
           colors,
+          priceRange,
           sizes,
         },
       ],
@@ -32,6 +34,7 @@ const Joggers = () => {
           colors,
           sizes,
           dressStyles,
+          priceRange,
           limit,
           offset: pageParam,
         }),
