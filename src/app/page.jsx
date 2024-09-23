@@ -11,7 +11,7 @@ export default function Home() {
 
   const limit = 9;
 
-  const { fetchNextPage, data, hasNextPage, isFetchingNextPage } =
+  const { fetchNextPage, data, hasNextPage, isFetchingNextPage, isLoading } =
     useInfiniteQuery({
       queryKey: [
         "GET_ALL_PRODUCTS",
@@ -55,7 +55,9 @@ export default function Home() {
           onClick={handleOffsetChange}
           disabled={!hasNextPage || isFetchingNextPage}
         >
-          {isFetchingNextPage
+          {isLoading
+            ? "Loading..."
+            : isFetchingNextPage
             ? "Loading..."
             : hasNextPage
             ? "See More"

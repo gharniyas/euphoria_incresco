@@ -15,7 +15,7 @@ const Joggers = () => {
 
   const limit = 9;
 
-  const { fetchNextPage, data, hasNextPage, isFetchingNextPage } =
+  const { fetchNextPage, isLoading, data, hasNextPage, isFetchingNextPage } =
     useInfiniteQuery({
       queryKey: [
         "GET_ALL_PRODUCTS_JOGGERS",
@@ -62,7 +62,9 @@ const Joggers = () => {
             onClick={handleOffsetChange}
             disabled={!hasNextPage || isFetchingNextPage}
           >
-            {isFetchingNextPage
+            {isLoading
+              ? "Loading..."
+              : isFetchingNextPage
               ? "Loading..."
               : hasNextPage
               ? "See More"
