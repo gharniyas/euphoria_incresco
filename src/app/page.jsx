@@ -36,7 +36,7 @@ export default function Home() {
           offset: pageParam * limit,
         }),
       getNextPageParam: (lastPage, allPages) => {
-        if (lastPage.length < limit) return undefined;
+        if (lastPage?.length < limit) return undefined;
         return allPages.length;
       },
     });

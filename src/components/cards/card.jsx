@@ -1,15 +1,17 @@
 import Image from "next/image";
 import React from "react";
 import { Button } from "../ui/button";
-import { useRouter } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 import { Heart } from "lucide-react";
 const Card = ({ data }) => {
   const { push } = useRouter();
+  const param = usePathname();
+  const id = param.split("/")[2];
 
   return (
     <div
       className="w-[281px] h-[400px] relative "
-      onClick={() => push(`product/${data?._id}`)}
+      onClick={() => push(!id ? `product/${data?._id}` : data?._id)}
     >
       {data?.image_url && (
         <Image
