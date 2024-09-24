@@ -10,6 +10,8 @@ export const fetchProducts = async ({
   offset,
   gender,
   priceRange,
+  sorting,
+  sortingOrder,
 }) => {
   try {
     const res = await axios.post(
@@ -24,6 +26,8 @@ export const fetchProducts = async ({
         offset: offset,
         gender: gender,
         priceRange: priceRange,
+        sortField: sorting,
+        sortOrder: sortingOrder,
       },
       {
         headers: {

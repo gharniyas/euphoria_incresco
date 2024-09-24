@@ -18,6 +18,8 @@ const Men = () => {
     sizes,
     dressStyles,
     setProducts,
+    sorting,
+    sortingOrder,
   } = useStore();
 
   const limit = 9;
@@ -34,6 +36,8 @@ const Men = () => {
           dressStyles,
           priceRange,
           gender,
+          sorting,
+          sortingOrder,
         },
       ],
       queryFn: ({ pageParam = 0 }) =>
@@ -47,6 +51,8 @@ const Men = () => {
           priceRange,
           offset: pageParam,
           gender,
+          sorting,
+          sortingOrder,
         }),
       getNextPageParam: (lastPage, allPages) => {
         if (lastPage?.length === limit) {

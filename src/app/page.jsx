@@ -6,8 +6,16 @@ import useStore from "@/store/store";
 import { useInfiniteQuery } from "@tanstack/react-query";
 
 export default function Home() {
-  const { searchValue, categories, colors, sizes, dressStyles, priceRange } =
-    useStore();
+  const {
+    searchValue,
+    categories,
+    colors,
+    sizes,
+    dressStyles,
+    priceRange,
+    sorting,
+    sortingOrder,
+  } = useStore();
 
   const limit = 9;
 
@@ -22,6 +30,8 @@ export default function Home() {
           sizes,
           priceRange,
           dressStyles,
+          sorting,
+          sortingOrder,
         },
       ],
       queryFn: ({ pageParam = 0 }) =>
@@ -32,8 +42,10 @@ export default function Home() {
           sizes,
           dressStyles,
           priceRange,
+          sorting,
           limit,
           offset: pageParam * limit,
+          sortingOrder,
         }),
       getNextPageParam: (lastPage, allPages) => {
         if (lastPage?.length < limit) return undefined;

@@ -8,6 +8,8 @@ const useStore = create((set) => ({
   colors: [],
   sizes: [],
   dressStyles: [],
+  sorting: "",
+  sortingOrder: 0,
   setProducts: (arr) =>
     set(() => ({
       products: arr,
@@ -18,6 +20,8 @@ const useStore = create((set) => ({
   setColors: (arr) => set(() => ({ colors: arr })),
   setSizes: (arr) => set(() => ({ sizes: arr })),
   setDressStyles: (arr) => set(() => ({ dressStyles: arr })),
+  setSorting: (value) => set({ sorting: value }),
+  setSortingOrder: (value) => set({ sortingOrder: value }),
 }));
 
 export default useStore;

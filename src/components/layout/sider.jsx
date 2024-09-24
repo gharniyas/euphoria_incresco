@@ -4,6 +4,7 @@ import Price from "./price";
 import Colors from "./colors";
 import Size from "./size";
 import DressStyle from "./dress_style";
+import SortingProducts from "./sorting";
 
 const Sider = () => {
   return (
@@ -13,6 +14,7 @@ const Sider = () => {
       <Colors />
       <Size />
       <DressStyle />
+      <SortingProducts />
     </div>
   );
 };

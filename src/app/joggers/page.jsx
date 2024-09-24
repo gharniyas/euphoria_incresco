@@ -10,8 +10,16 @@ import React from "react";
 const Joggers = () => {
   const pathname = usePathname();
   const categories = [pathname.split("/")[1]];
-  const { searchValue, priceRange, colors, sizes, dressStyles, setProducts } =
-    useStore();
+  const {
+    searchValue,
+    priceRange,
+    colors,
+    sizes,
+    dressStyles,
+    setProducts,
+    sorting,
+    sortingOrder,
+  } = useStore();
 
   const limit = 9;
 
@@ -25,6 +33,8 @@ const Joggers = () => {
           colors,
           priceRange,
           sizes,
+          sorting,
+          sortingOrder,
         },
       ],
       queryFn: ({ pageParam = 0 }) =>
@@ -37,6 +47,8 @@ const Joggers = () => {
           priceRange,
           limit,
           offset: pageParam,
+          sorting,
+          sortingOrder,
         }),
       getNextPageParam: (lastPage, allPages) => {
         if (lastPage?.length === limit) {

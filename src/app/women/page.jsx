@@ -10,8 +10,16 @@ import React from "react";
 const Women = () => {
   const pathname = usePathname();
   const gender = pathname.split("/")[1];
-  const { searchValue, priceRange, categories, colors, sizes, dressStyles } =
-    useStore();
+  const {
+    searchValue,
+    priceRange,
+    categories,
+    colors,
+    sizes,
+    dressStyles,
+    sorting,
+    sortingOrder,
+  } = useStore();
 
   const limit = 9;
 
@@ -27,6 +35,8 @@ const Women = () => {
           dressStyles,
           priceRange,
           gender,
+          sorting,
+          sortingOrder,
         },
       ],
       queryFn: ({ pageParam = 0 }) =>
@@ -40,6 +50,8 @@ const Women = () => {
           limit,
           offset: pageParam,
           gender,
+          sorting,
+          sortingOrder,
         }),
       getNextPageParam: (lastPage, allPages) => {
         if (lastPage?.length === limit) {

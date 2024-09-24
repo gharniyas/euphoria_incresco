@@ -13,6 +13,8 @@ export async function POST(req) {
       offset,
       gender,
       priceRange,
+      sortField,
+      sortOrder,
     } = await req.json();
 
     const client = await clientPromise;
@@ -35,11 +37,16 @@ export async function POST(req) {
         $lte: priceRange[1],
       };
     }
+    const sortOptions = {};
+    if (sortField) {
+      sortOptions[sortField] = sortOrder;
+    }
 
     const items = await db
       .collection("products")
       .find(filter)
       .skip(offset)
+      .sort(sortOptions)
       .limit(limit)
       .toArray();
 
