@@ -8,15 +8,20 @@ const ProductsTemplate = ({ products = [] }) => {
 
   const clothingType = params.split("/")[1] || "Shop Your";
   const capitalizeFirstLetter = (string) => {
-    return string?.charAt(0).toUpperCase() + string?.slice(1);
+    const capital = string?.charAt(0).toUpperCase() + string?.slice(1);
+    return `${
+      capital === "Joggers"
+        ? capital
+        : capital === "Shop Your"
+        ? `${capital} Clothings`
+        : `${capital}'s Clothing`
+    }`;
   };
 
   return (
     <div className="w-full px-[36px] ">
       <div className=" flex justify-between py-[36px]  text-[#3F4646] text-[22px]">
-        <div className="font-bold ">
-          {capitalizeFirstLetter(clothingType)} Clothing
-        </div>
+        <div className="font-bold ">{capitalizeFirstLetter(clothingType)}</div>
         <div className="flex gap-2 ">
           <Button variant="destructive" className="text-[#8A33FD] text-[22px]">
             New

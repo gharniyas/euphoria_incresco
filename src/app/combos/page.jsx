@@ -12,9 +12,7 @@ const Combos = () => {
   return (
     <div className="w-full ">
       <div className="flex justify-between  py-[36px] text-[#3F4646] text-[22px]">
-        <div className="font-bold">
-          {capitalizeFirstLetter(clothingType)} Clothing
-        </div>
+        <div className="font-bold">{capitalizeFirstLetter(clothingType)}</div>
         <div className="flex gap-2">
           <Button variant="destructive" className="text-[#3F4646] text-[22px]">
             New
