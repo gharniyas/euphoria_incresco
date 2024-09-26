@@ -33,7 +33,7 @@ export async function POST(req) {
       filter.dress_style = { $in: dress_styles };
     if (Array.isArray(priceRange) && priceRange.length === 2) {
       filter.price = {
-        // $gte: priceRange[0],
+        $gte: priceRange[0],
         $lte: priceRange[1],
       };
     }

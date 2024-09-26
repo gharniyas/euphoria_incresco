@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   Accordion,
@@ -11,9 +13,9 @@ import useStore from "@/store/store";
 
 const Price = () => {
   const { priceRange, setPriceRange } = useStore();
+
   const handlePrice = (value) => {
-    const updatedPriceRange = [0, value[0]];
-    setPriceRange(updatedPriceRange);
+    setPriceRange(value);
   };
 
   return (
@@ -25,12 +27,14 @@ const Price = () => {
           </AccordionTrigger>
           <AccordionContent className="px-[30px] py-[26px]  border-t">
             <Slider
-              defaultValue={[33]}
+              value={priceRange}
+              min={0}
               max={1000}
               step={1}
               className="my-[40px]"
               onValueChange={handlePrice}
             />
+
             <div className="flex justify-between items-center">
               <Button variant="outline" className="my-2 px-[39px]">
                 ${priceRange[0]}
